@@ -1,0 +1,41 @@
+/* Transaction and Rollbacks */
+
+	--Safe Transaction without error
+
+	BEGIN TRANSACTION;
+
+DECLARE @NewOrderID INT;
+
+-- Insert a new order
+INSERT INTO Orders (Ord_ID, User_ID, Order_Date, Total_Amount, Order_Status, Expected_Delivery_Days)
+VALUES (1042, 40, GETDATE(), 100.00, 'Pending', 5);
+
+-- Get the ID of the newly inserted order
+SET @NewOrderID = SCOPE_IDENTITY();
+
+-- Insert order items
+INSERT INTO OrderItems (OrderItem_ID, Order_ID, Product_ID, Quantity, Subtotal)
+VALUES (341, @NewOrderID, 1, 2, 50.00);
+
+-- If all inserts were successful, commit the transaction
+COMMIT TRANSACTION;
+
+	--Transaction that account error
+
+	BEGIN TRANSACTION;
+
+DECLARE @NewOrderID1 INT;
+
+-- Insert a new order
+INSERT INTO Orders (Ord_ID, User_ID, Order_Date, Total_Amount, Order_Status, Expected_Delivery_Days)
+VALUES (1042, 40, GETDATE(), 100.00, 'Pending', 5);
+
+-- Get the ID of the newly inserted order
+SET @NewOrderID = SCOPE_IDENTITY();
+
+-- Insert order items
+INSERT INTO OrderItems (OrderItem_ID, Order_ID, Product_ID, Quantity, Subtotal)
+VALUES (341, @NewOrderID, 1, 2, 50.00);
+
+-- Simulate an error
+ROLLBACK TRANSACTION;

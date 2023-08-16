@@ -1,0 +1,42 @@
+/*Adding Security to the database */
+
+-- Create roles
+CREATE ROLE Admin;
+CREATE ROLE Manager;
+CREATE ROLE Customer;
+
+-- Grant permissions to roles
+GRANT SELECT, INSERT, UPDATE, DELETE ON Product TO Manager;
+GRANT SELECT ON Product TO Customer;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON Orders TO Manager;
+GRANT SELECT, INSERT ON Orders TO Customer;
+
+GRANT SELECT ON Shipping_Details TO Manager;
+GRANT SELECT ON Shipping_Details TO Customer;
+
+-- Assign users to roles
+ALTER ROLE Admin ADD MEMBER [guest];   -- Replace [admin_user] with actual username
+ALTER ROLE Manager ADD MEMBER [guest];
+ALTER ROLE Customer ADD MEMBER [user1];
+ALTER ROLE Customer ADD MEMBER [user2];
+
+
+
+-- Create a view for restricted access to Product table
+Go
+CREATE VIEW SecureProductView AS
+SELECT Prod_ID, Name, Price
+FROM Product;
+
+CREATE FUNCTION dbo.OrdersRowFilterPredicate(@User_ID INT)
+    RETURNS TABLE
+WITH SCHEMABINDING
+AS
+    RETURN SELECT 1 AS fn_securitypredicate_result
+    WHERE @User_ID = USER_ID();
+
+-- Create the security policy
+CREATE SECURITY POLICY OrdersRLS
+    ADD FILTER PREDICATE dbo.OrdersRowFilterPredicate(User_ID) ON dbo.Orders
+    WITH (STATE = ON);

@@ -1,0 +1,41 @@
+ID,User_ID,Address,City,Country,Postal_Code
+101,1,123 Main St,New York,USA,10001
+102,2,456 Elm St,Los Angeles,USA,90001
+103,3,789 Oak St,Chicago,USA,60601
+104,4,321 Pine St,Houston,USA,77001
+105,5,654 Maple St,Miami,USA,33101
+106,6,987 Cedar St,San Francisco,USA,94101
+107,7,555 Birch St,Dallas,USA,75201
+108,8,888 Willow St,Washington,USA,20001
+109,9,222 Spruce St,Boston,USA,2201
+110,10,111 Ash St,Seattle,USA,98101
+111,11,999 Pineapple St,Atlanta,USA,30301
+112,12,333 Orange St,Denver,USA,80201
+113,13,777 Banana St,Phoenix,USA,85001
+114,14,444 Cherry St,Austin,USA,73301
+115,15,666 Grape St,Philadelphia,USA,19101
+116,16,111 Lemon St,Detroit,USA,48201
+117,17,999 Mango St,Memphis,USA,38101
+118,18,333 Kiwi St,Baltimore,USA,21201
+119,19,777 Raspberry St,Portland,USA,97201
+120,20,444 Blueberry St,San Diego,USA,92101
+121,21,888 Blackberry St,Minneapolis,USA,55401
+122,22,222 Strawberry St,San Antonio,USA,78201
+123,23,555 Raspberry St,San Jose,USA,95101
+124,24,777 Plum St,Oklahoma City,USA,73101
+125,25,333 Watermelon St,Sacramento,USA,95801
+126,26,111 Papaya St,Raleigh,USA,27601
+127,27,999 Cranberry St,Milwaukee,USA,53201
+128,28,333 Avocado St,Las Vegas,USA,89101
+129,29,777 Guava St,Charlotte,USA,28201
+130,30,444 Durian St,Tucson,USA,85701
+131,31,888 Dragonfruit St,Kansas City,USA,64101
+132,32,222 Mango St,Virginia Beach,USA,23451
+133,33,555 Kiwifruit St,Omaha,USA,68101
+134,34,777 Nectarine St,Honolulu,USA,96801
+135,35,333 Lychee St,Colorado Springs,USA,80901
+136,36,111 Apricot St,Wichita,USA,67201
+137,37,999 Fig St,Santa Ana,USA,92701
+138,38,333 Pomegranate St,Cleveland,USA,44101
+139,39,777 Persimmon St,Tampa,USA,33601
+140,40,444 Coconut St,Honolulu,USA,96801

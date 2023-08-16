@@ -1,0 +1,10 @@
+/* Backups */
+
+	-- Full Backup
+-- Full Backup
+BACKUP DATABASE E_Commerce
+TO DISK = 'C:\Backup\E_Commerce_Full.bak';
+
+-- Transaction Log Backup
+BACKUP LOG E_Commerce
+TO DISK = 'E:\Backup\E_Commerce_Log.bak';

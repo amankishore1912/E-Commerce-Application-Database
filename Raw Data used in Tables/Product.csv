@@ -1,0 +1,51 @@
+ID,Name,Description,SKU,Category_ID,Inventory_ID,Price
+1,Laptop,High-performance laptop with SSD,LAP001,101,201,999.99
+2,Smartphone,Latest smartphone with advanced features,PHN002,101,202,699
+3,Wireless Headphones,Noise-cancelling wireless headphones,HPN003,101,203,149.99
+4,4K Smart TV,55-inch Smart TV with 4K resolution,TV001,101,204,799
+5,Gaming Console,High-end gaming console with controllers,GM001,101,205,499.99
+6,Digital Camera,24MP DSLR camera with lens kit,CAM002,101,206,799
+7,Fitness Tracker,Smart fitness tracker with heart rate monitor,FIT007,103,207,89.99
+8,Wireless Router,High-speed wireless router with gigabit ports,NET008,101,208,129
+9,External Hard Drive,2TB portable external hard drive,HDD003,101,209,89.99
+10,Wireless Earbuds,True wireless earbuds with charging case,EAR004,101,210,79.99
+11,Coffee Maker,Programmable coffee maker with timer,COF005,102,211,49.99
+12,Blender,High-powered blender for smoothies,BLE006,102,212,69.99
+13,Microwave Oven,1000W microwave oven with various presets,MWO007,102,213,129
+14,Smart Watch,Smartwatch with fitness and health features,SWT008,101,214,199
+15,Wireless Keyboard and Mouse,Combo set of wireless keyboard and mouse,KBM009,101,215,39.99
+16,Portable Speaker,Portable Bluetooth speaker with great sound,SPK010,101,216,59.99
+17,Wireless Security Camera,IP camera with night vision and motion detection,CAM011,101,217,149.99
+18,Electric Toothbrush,Rechargeable electric toothbrush with modes,TOB012,103,218,49.99
+19,Hair Dryer,Professional hair dryer with ionic technology,DRY013,103,219,79.99
+20,Electric Shaver,Cordless electric shaver with multiple blades,SHA014,103,220,89.99
+21,External SSD,High-speed external SSD for data storage,SSD015,101,221,149
+22,Wireless Gaming Mouse,Gaming mouse with customizable RGB lighting,GAM016,101,222,59.99
+23,Smart Thermostat,Wi-Fi enabled smart thermostat for home,THR017,103,223,129
+24,Home Security System,Comprehensive home security system,SEC018,103,224,299
+25,Robotic Vacuum Cleaner,Robotic vacuum with smart navigation,VAC019,103,225,199.99
+26,Portable Air Conditioner,Portable AC unit for cooling small spaces,PAC020,103,226,249
+27,Smart Plug,Wi-Fi enabled smart plug for home automation,PLG021,101,227,29.99
+28,Wireless Gaming Headset,Gaming headset with surround sound,GAM022,101,228,89.99
+29,Smart Doorbell,Video doorbell with two-way audio,DRB023,103,229,149
+30,Wireless Charging Pad,Fast wireless charging pad for smartphones,CHG024,101,230,29.99
+31,Electric Kettle,Stainless steel electric kettle,KET025,102,231,39.99
+32,Air Fryer,Compact air fryer for healthy cooking,FRY026,102,232,79.99
+33,Fitness Smart Scale,Smart scale with body composition analysis,SCL027,103,233,49.99
+34,DSLR Camera Lens,High-quality interchangeable camera lens,LEN028,101,234,299
+35,Noise-Cancelling Earbuds,Earbuds with active noise cancellation,EAR029,101,235,129
+36,Cordless Vacuum Cleaner,Cordless vacuum for quick cleaning,VAC030,103,236,129.99
+37,Portable Power Bank,High-capacity power bank for charging devices,PWR031,101,237,49.99
+38,Electric Scooter,Foldable electric scooter for commuting,SCP032,104,238,299
+39,Water Purifier,Countertop water purifier with filtration,PUR033,102,239,99.99
+40,Bluetooth Speaker,Portable Bluetooth speaker with stylish design,SPK034,101,240,49.99
+41,3D Printer,Desktop 3D printer for hobbyists and makers,PRT035,101,241,399
+42,Smart Light Bulb,Wi-Fi enabled smart LED light bulb,LTB036,104,242,19.99
+43,Wireless Gaming Controller,Wireless controller for gaming consoles,CON037,101,243,59.99
+44,Car Dash Cam,HD dash cam for recording while driving,DCM038,104,244,79.99
+45,Portable Bluetooth Speaker,Compact Bluetooth speaker for outdoor use,SPK039,101,245,29.99
+46,Smart Wi-Fi Router,Mesh Wi-Fi system for whole-home coverage,NET040,101,246,199
+47,Fitness Smartwatch,Smartwatch with fitness tracking features,SWT041,101,247,129
+48,Wireless Keyboard,Ergonomic wireless keyboard for productivity,KB042,101,248,69.99
+49,External Battery Charger,External battery charger for smartphones,PWR043,101,249,39.99
+50,Robot Lawn Mower,Robotic lawn mower for automated lawn care,LWN044,103,250,399

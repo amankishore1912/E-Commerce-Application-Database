@@ -1,0 +1,33 @@
+/* Data Analysis */
+	
+	/* Query to Identify the most popular product Category */
+	SELECT TOP 5
+    c.Name AS Category_Name,
+    SUM(oi.Quantity) AS Total_Sales
+	FROM
+		Product_Category c
+	JOIN
+		Product p ON c.Cat_ID = p.Category_ID
+	JOIN
+		OrderItems oi ON p.Prod_ID = oi.Product_ID
+	GROUP BY
+		c.Cat_ID, c.Name
+	ORDER BY
+		Total_Sales DESC;
+
+
+	/* Query to identify the region with the highest Sales */
+	SELECT TOP 1 Country,
+    SUM(oi.Quantity * p.Price) AS Total_Sales
+	FROM
+		Shipping_Details sd
+	JOIN
+		Orders o ON sd.Order_ID = o.Ord_ID
+	JOIN
+		OrderItems oi ON o.Ord_ID = oi.Order_ID
+	JOIN
+		Product p ON oi.Product_ID = p.Prod_ID
+	GROUP BY
+		Country
+	ORDER BY
+		Total_Sales DESC;

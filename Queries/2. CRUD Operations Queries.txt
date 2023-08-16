@@ -1,0 +1,38 @@
+/*Task 3: Performing CRUD Operations on the database */
+
+	-- Insert a new product
+INSERT INTO Product (Prod_ID, Description, SKU, Category_ID, Inventory_ID, Price)
+VALUES (51, 'New Laptop', 'Powerful laptop with SSD', 'LAP123', 101, 251, 1299.99);
+
+
+	-- Retrieve all products
+SELECT * FROM Product;
+
+-- Retrieve orders for a specific user
+SELECT * FROM Orders WHERE User_ID = 12;
+
+-- Update product price
+UPDATE Product
+SET Price = 1399.99
+WHERE SKU = 'LAP123';
+
+-- Update order status
+UPDATE Orders
+SET Order_Status = 'Shipped'
+WHERE Ord_ID = 1005;
+
+-- Delete a product
+DELETE FROM Product
+WHERE SKU = 'LAP123';
+
+-- Delete an order
+DELETE FROM Orders
+WHERE Ord_ID = 1005;
+
+-- Retrieve products with a specific category
+SELECT * FROM Product
+WHERE Category_ID = 2;
+
+-- Retrieve shipping details for a specific user and region
+SELECT * FROM Shipping_Details
+WHERE User_ID = 123 AND Country = 'India';

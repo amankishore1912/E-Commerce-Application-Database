@@ -1,0 +1,14 @@
+/* Creating Indexes for optimizing SQL Queries */
+
+	CREATE INDEX IX_Product_Name_Price ON Product (Name, Price);
+
+	CREATE INDEX IX_Orders_User_ID ON Orders (User_ID);
+	CREATE INDEX IX_Orders_Order_Date ON Orders (Order_Date);
+	CREATE INDEX IX_Orders_Order_Status ON Orders (Order_Status);
+
+	CREATE INDEX IX_Shipping_Details_User_ID ON Shipping_Details (User_ID);
+	CREATE INDEX IX_Shipping_Details_Region ON Shipping_Details (Country);
+
+	CREATE UNIQUE NONCLUSTERED INDEX IX_User_Details_Username ON User_Details (Username);
+
+	CREATE INDEX IX_User_Payment_User_ID ON User_Payment (User_PID);

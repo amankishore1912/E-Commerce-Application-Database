@@ -1,0 +1,121 @@
+create database E_Commerce;
+use E_Commerce;
+
+create table user_details(
+ID int NOT NULL,
+username varchar(20) NOT NULL,
+password varchar(20) NOT NULL,
+First_Name varchar(50) NOT NULL,
+Last_Name varchar(50),
+Phone_No int NOT NULL,
+Primary Key (ID));
+
+
+create table user_address(
+Addr_ID int Not null,
+User_ID int not null,
+Address varchar(50) NOT NULL,
+City varchar(20) NOT Null,
+Country varchar(20) not null,
+Postal_Code int not null,
+Primary key (ID),
+Foreign Key (User_ID) references user_details(ID));
+
+create table user_payment(
+UserPay_ID int not null,
+User_PID int not null,
+Payment_Type varchar(20) not null,
+Provider varchar(20),
+Account_No int not null,
+Primary Key (ID),
+Foreign Key (User_PID) references user_details(ID));
+
+create table Product_Category(
+Cat_ID int not null,
+Name varchar(30) not null,
+Description Text,
+Cat_Sales int not null,
+Primary Key (ID));
+
+
+
+Product_Category table:
+
+Insert into Product_Category(ID, Name, Description, Cat_Sales)
+Values
+	(101, 'Gadgets & Electronics', 'A category for electronic devices and gadgets', 250);
+Insert into Product_Category(ID, Name, Description, Cat_Sales)
+Values
+	(102, 'Kitchen Appliances', 'A category for items used in Kitchen', 25);
+Insert into Product_Category(ID, Name, Description, Cat_Sales)
+Values
+	(103, 'Home Decor', 'A category for the uses in households', 20);
+Insert into Product_Category(ID, Name, Description, Cat_Sales)
+Values
+	(104, 'Vehicle Accessories','A category for Vehicles Products', 11);
+
+
+
+create table Product_Inventory(
+Inv_ID int not null,
+Quantity int not null,
+Sales int not null,
+Category_ID int not null,
+Primary Key (ID),
+Foreign Key (Category_ID) references Product_Category(ID));
+
+create table Product(
+Prod_ID int not null,
+Name varchar(30) not null,
+Description text,
+SKU varchar(20) not null,
+Category_ID int not null,
+Inventory_ID int not null,
+Price float not null,
+Primary Key (ID),
+Foreign Key (Category_ID) references Product_Category(Cat_ID),
+Foreign Key (Inventory_ID) references Product_Inventory(Inv_ID));
+
+create table Orders(
+Ord_ID int not null,
+User_ID int not null,
+Order_Date date,
+Total_Amount float,
+Order_Status varchar(20),
+Expected_Delivery_Days int,
+Primary Key (ID),
+Foreign Key (User_ID) references user_details(ID));
+
+create table OrderItems(
+OrderItem_ID int not null,
+Order_ID int not null,
+Product_ID int not null,
+Quantity int not null,
+Subtotal float not null,
+Primary key (OrderItem_ID),
+Foreign Key (Order_ID) references Orders(Ord_ID),
+Foreign Key (Product_ID) references Product(Prod_ID));
+
+create table Payment(
+Pay_ID int not null, 
+Order_ID int not null,
+Payment_Type varchar(20),
+Payment_Date date not null,
+Amount float not null,
+Primary Key (ID),
+Foreign Key (Order_ID) references Orders(Ord_ID));
+
+create table Shipping_Details(
+Ship_ID int not null,
+Order_ID int not null,
+User_ID int not null,
+Address varchar(30) not null,
+City varchar(20),
+Country varchar(20),
+Postal_Code int not null,
+Phone_No int not null,
+Shipping_Date date not null,
+Primary Key (ID),
+Foreign Key (Order_ID) references Orders(Ord_ID),
+Foreign Key (User_ID) references user_details(ID));
+

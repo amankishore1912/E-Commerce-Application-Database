@@ -1,0 +1,69 @@
+/* Views have been Created */
+
+	/* View 1 created */
+	Go
+	Create View List_of_Products
+	As select a.Prod_ID, a.Name, a.Description, a.SKU, a.Category_ID, a.Price, b.Inv_ID, b. Quantity, b.Sales 
+	from Product a
+	full join Product_Inventory b
+	on a.Inventory_ID = b.Inv_ID
+
+	/* View 2 Created */
+	Go
+	CREATE VIEW MonthlySales AS
+	SELECT
+    YEAR(Order_Date) AS Year,
+    MONTH(Order_Date) AS Month,
+    SUM(oi.Quantity * p.Price) AS Revenue,
+    COUNT(o.Ord_ID) AS NumOrders,
+    STRING_AGG(p.Name, ', ') AS TopProducts
+	FROM
+		Orders o
+	JOIN
+		OrderItems oi ON o.Ord_ID = oi.Order_ID
+	JOIN
+		Product p ON oi.Product_ID = p.Prod_ID
+	GROUP BY
+		YEAR(Order_Date), MONTH(Order_Date)
+
+	/* View 3 Created */
+	Go
+	CREATE VIEW CustomerLoyalty AS
+	SELECT
+    u.ID AS Customer_ID,
+    u.First_Name,
+    u.Last_Name,
+    COUNT(DISTINCT o.Ord_ID) AS NumOrders,
+    SUM(oi.Quantity) AS TotalItemsPurchased,
+    SUM(oi.Quantity * p.Price) AS TotalSpent
+	FROM
+		user_details u
+	JOIN
+		Orders o ON u.ID = o.User_ID
+	JOIN
+		OrderItems oi ON o.Ord_ID = oi.Order_ID
+	JOIN
+		Product p ON oi.Product_ID = p.Prod_ID
+	GROUP BY
+		u.ID, u.First_Name, u.Last_Name
+
+	/* View 4 Created */
+	Go
+	CREATE VIEW ShippingPerformance AS
+	SELECT
+    o.Ord_ID AS Order_ID,
+    o.Order_Date,
+    s.Shipping_Date,
+    DATEDIFF(day, o.Order_Date, s.Shipping_Date) AS DeliveryDays,
+    CASE WHEN DATEDIFF(day, o.Order_Date, s.Shipping_Date) > o.Expected_Delivery_Days THEN 1 ELSE 0 END AS DelayedOrder
+	FROM
+		Orders o
+	JOIN
+		Shipping_Details s ON o.Ord_ID = s.Order_ID;
+
+
+	/* Queries to display Views */
+	select * from ShippingPerformance
+	select * from MonthlySales
+	select * from List_of_Products
+	select * from CustomerLoyalty
